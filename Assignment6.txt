@@ -1,0 +1,188 @@
+1. Write a program to calculate sum of first N natural numbers
+
+Ans. #include<stdio.h>
+     int main()
+    {
+      int i=1,s=0,n;
+      scanf("%d",&n);
+      while(i<=n)
+      {
+        s=s+i;
+        i++;
+      }
+      printf("%d",s);
+     return 0;
+    }
+
+2. Write a program to calculate sum of first N even natural numbers
+
+Ans. #include<stdio.h>
+     int main()
+    {
+      int i=1,s=0,n;
+      scanf("%d",&n);
+      while(i<=n)
+      {
+        s=s+2*i;
+        i++;
+      }
+      printf("%d",s);
+     return 0;
+    }
+
+3. Write a program to calculate sum of first N odd natural numbers
+
+Ans. #include<stdio.h>
+     int main()
+    {
+      int i=1,s=0,n;
+      scanf("%d",&n);
+      while(i<=n)
+      {
+        s=s+(2*i-1);
+        i++;
+      }
+      printf("%d",s);
+     return 0;
+    }
+
+
+4. Write a program to calculate sum of squares of first N natural numbers
+
+Ans. #include<stdio.h>
+     int main()
+    {
+      int i=1,s=0,n;
+      scanf("%d",&n);
+      while(i<=n)
+      {
+        s=s+(i*i);
+        i++;
+      }
+      printf("%d",s);
+     return 0;
+    }
+
+
+5. Write a program to calculate sum of cubes of first N natural numbers
+
+Ans. #include<stdio.h>
+     int main()
+    {
+      int i=1,s=0,n;
+      scanf("%d",&n);
+      while(i<=n)
+      {
+        s=s+(i*i*i);
+        i++;
+      }
+      printf("%d",s);
+     return 0;
+    }
+
+
+6. Write a program to calculate factorial of a number
+
+Ans. #include<stdio.h>
+     int main()
+    {
+      int i=1,fact=1,n;
+      scanf("%d",&n);
+      while(i<=n)
+      {
+        fact=fact*i;
+        i++;
+      }
+      printf("%d",fact);
+     return 0;
+    }
+
+
+7. Write a program to count digits in a given number
+
+Ans. #include<stdio.h>
+     int main()
+    {
+      int count=0,n;
+      scanf("%d",&n);
+      while(n)
+      {
+        count++;
+        n=n/10;
+      }
+      printf("%d",count);
+     return 0;
+    }
+
+
+8. Write a program to check whether a given number is a Prime number or
+not
+
+Ans. #include<stdio.h>
+     int main()
+    {
+      int i=2,n;
+      scanf("%d",&n);
+      while(i<=n/2)
+      {
+        if(n%i==0)
+          break;
+        i++;
+      }
+      if(i==(n/2+1))
+        printf("Prime");
+      else
+        printf("Not Prime");
+     return 0;
+    }
+
+
+9. Write a program to calculate LCM of two numbers
+
+Ans. #include<stdio.h>
+     int main()
+    {
+      int i=1,j,a,b,n,m;
+      scanf("%d %d",&a, &b);
+      m=a;
+      n=b;
+      while(1)
+      {
+        m=m*i;
+        j=1;
+        while(m<=(a*b))
+        {
+          n=b*j;
+          if(m==n || n>m)
+          {
+            break;
+          }
+          j++;
+        }
+        if(m==n)
+        {
+          break;
+        }
+        m=a;
+        i++;
+      }
+      printf("LCM of %d and %d is %d", a, b, m);
+     return 0;
+    }
+
+10. Write a program to reverse a given number
+
+Ans. #include<stdio.h>
+     int main()
+    {
+      int a, d,rev=0;
+      scanf("%d",&a);
+      while(a)
+      {
+        d=a%10;
+        rev=rev*10+d;
+        a=a/10;
+      }
+      printf("Reverse is %d",rev);
+     return 0;
+    }
