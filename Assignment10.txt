@@ -1,0 +1,283 @@
+1. Write a function to calculate the area of a circle. (TSRS)
+
+Ans. #include<stdio.h>
+
+    float area(int);
+
+    int main()
+    {
+        printf("Area of circle is %.2f",area(5));
+        return 0;
+    }
+
+    float area(int r)
+    {
+        return 3.14*r*r;
+    }
+
+
+2. Write a function to calculate simple interest. (TSRS)
+
+Ans. #include<stdio.h>
+
+    float SI(int,int,int);
+
+    int main()
+    {
+        printf("SI is %.2f",SI(1257,8,3));
+        return 0;
+    }
+
+    float SI(int p, int r, int t)
+    {
+        return (p*r*t)/100.0;
+    }
+
+
+
+3. Write a function to check whether a given number is even or odd. Return 1 if the
+number is even, otherwise return 0. (TSRS)
+
+Ans. #include<stdio.h>
+
+    int isEven(int);
+
+    int main()
+    {
+        printf("Number is %d", isEven(1258));
+        return 0;
+    }
+
+    int isEven(int n)
+    {
+        return n%2==0;
+    }
+
+
+4. Write a function to print first N natural numbers (TSRN)
+
+Ans. #include<stdio.h>
+
+    void printN(int);
+
+    int main()
+    {
+        printN(12);
+        return 0;
+    }
+
+    void printN(int n)
+    {
+        int i=1;
+        while(i<=n)
+        {
+            printf("%d ",i);
+            i++;
+        }
+    }
+
+    
+5. Write a function to print first N odd natural numbers. (TSRN)
+
+Ans. #include<stdio.h>
+
+    void printNOdd(int);
+
+    int main()
+    {
+        printNOdd(12);
+        return 0;
+    }
+
+    void printNOdd(int n)
+    {
+        int i=1;
+        while(i<=n)
+        {
+            printf("%d ",2*i-1);
+            i++;
+        }
+    }
+
+
+6. Write a function to calculate the factorial of a number. (TSRS)
+
+Ans. #include<stdio.h>
+
+    int fact(int);
+
+    int main()
+    {
+        printf("factorial is %d", fact(6));
+        return 0;
+    }
+
+    int fact(int n)
+    {
+        int fact=1;
+        int i=1;
+        while(i<=n)
+        {
+            fact=fact*i;
+            i++;
+        }
+        return fact;
+    }
+
+
+7. Write a function to calculate the number of combinations one can make from n items
+and r selected at a time. (TSRS)
+
+Ans. #include<stdio.h>
+
+    int fact(int);
+    int comb(int,int);
+
+    int main()
+    {
+        printf("Combinations are %d", comb(7,2));
+        return 0;
+    }
+
+    int fact(int n)
+    {
+        int fact=1;
+        int i=1;
+        while(i<=n)
+        {
+            fact=fact*i;
+            i++;
+        }
+        return fact;
+    }
+
+    int comb(int a,int b)
+    {
+        return (fact(a))/((fact(b))*(fact(a-b)));
+    }
+
+
+8. Write a function to calculate the number of arrangements one can make from n items
+and r selected at a time. (TSRS)
+
+Ans. #include<stdio.h>
+
+    int fact(int);
+    int permutation(int,int);
+
+    int main()
+    {
+        printf("%d",permutation(8,4));
+        return 0;
+    }
+
+    int fact(int n)
+    {
+        int i=1;
+        int fact = 1;
+        while(i<=n)
+        {
+            fact=fact*i;
+            i++;
+        }
+        return fact;
+    }
+
+    int permutation(int a, int b)
+    {
+        return ((fact(a))/(fact(a-b)));
+    }
+
+
+
+9. Write a function to check whether a given number contains a given digit or not.
+(TSRS)
+
+Ans. #include<stdio.h>
+
+    int checkDigit(int, int);
+    int main()
+    {
+        if(checkDigit(3808,9))
+        {
+            printf("This Digit is there in the number.");
+        }
+        else
+        {
+            printf("This Digit is not there in the number.");
+        }
+        return 0;
+    }
+
+    int checkDigit(int n, int d)
+    {
+        int i;
+
+        while(n)
+        {
+            i=n%10;
+            if(i==d)
+                return 1;
+            n=n/10;
+        }
+        return 0;
+    }
+
+
+10. Write a function to print all prime factors of a given number. For example, if the
+number is 36 then your result should be 2, 2, 3, 3. (TSRN)
+
+Ans. #include<stdio.h>
+
+    int checkPrime(int);
+    void factorPrime(int);
+
+    int main()
+    {
+        factorPrime(35);
+        return 0;
+    }
+
+    int checkPrime(int n)
+    {
+        for(int i=2; i<=n/2; i++)
+        {
+            if(n%i==0)
+                return 0;
+        }
+        return 1;
+    }
+
+    void factorPrime(int n)
+    {
+        int j;
+        int p;
+        p=n;
+        for(int i=2; i<=p; i++)
+        {
+            j=0;
+            if(checkPrime(i))
+            {
+                j=i;
+            }
+            if(j!=0)
+            {
+                for(int k=j;n;)
+                {
+                    if(n%k==0)
+                    {
+                        printf("%d ", k);
+                    }
+                    else
+                    {
+                        break;
+                    }
+                    n=n/k;
+                }
+            }
+            if(n==1)
+            {
+                break;
+            }
+        }
+    }
