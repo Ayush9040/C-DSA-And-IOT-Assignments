@@ -1,0 +1,329 @@
+1. Write a program to calculate the sum of numbers stored in an array of size 10. Take
+array values from the user.
+
+Ans. #include<stdio.h>
+
+    int main()
+    {
+        int sum=0,a[10];
+
+        printf("Enter 10 numbers: ");
+        for(int i=0; i<10; i++)
+        {
+            scanf("%d",&a[i]);
+        }
+
+        for(int i=0; i<=9; i++)
+        {
+            sum=sum+a[i];
+        }
+
+        printf("Sum of 10 int values are %d",sum);
+
+        return 0;
+    }
+
+
+2. Write a program to calculate the average of numbers stored in an array of size 10.
+Take array values from the user.
+
+Ans. #include<stdio.h>
+
+    int main()
+    {
+        int sum=0,a[10];
+        float avg;
+
+        printf("Enter 10 numbers: ");
+        for(int i=0; i<10; i++)
+        {
+            scanf("%d",&a[i]);
+        }
+
+        for(int i=0; i<=9; i++)
+        {
+            sum=sum+a[i];
+        }
+
+        avg = sum/10.0;
+
+        printf("\nAverage of 10 int values are %f",avg);
+
+        return 0;
+    }
+
+
+3. Write a program to calculate the sum of all even numbers and sum of all odd
+numbers, which are stored in an array of size 10. Take array values from the user.
+
+Ans. #include<stdio.h>
+
+    int main()
+    {
+        int sumOdd=0, sumEven=0, a[10];
+
+        printf("Enter 10 numbers: ");
+        for(int i=0; i<10; i++)
+        {
+            scanf("%d",&a[i]);
+        }
+
+        for(int i=0; i<=9; i++)
+        {
+            if(a[i]%2)
+            {
+                sumOdd=sumOdd+a[i];
+            }
+            else
+            {
+                sumEven=sumEven+a[i];
+            }
+        }
+
+        printf("\nSum of odd int values are %d\n",sumOdd);
+        printf("Sum of even int values are %d",sumEven);
+
+        return 0;
+    }
+
+
+4. Write a program to find the greatest number stored in an array of size 10. Take array
+values from the user.
+
+Ans. #include<stdio.h>
+
+    int main()
+    {
+        int a[10];
+
+        for(int i=0; i<=9; i++)
+        {
+            scanf("%d",&a[i]);
+        }
+
+        int b = a[0];
+
+        for(int j=0; j<=9; j++)
+        {
+            if(a[j]>b)
+            {
+                b=a[j];
+            }
+        }
+
+        printf("Highest value in array is %d.",b);
+        return 0;
+    }
+
+
+5. Write a program to find the smallest number stored in an array of size 10. Take array
+values from the user.
+
+Ans. #include<stdio.h>
+
+    int main()
+    {
+        int a[10];
+
+        for(int i=0; i<=9; i++)
+        {
+            scanf("%d",&a[i]);
+        }
+
+        int b = a[0];
+
+        for(int j=0; j<=9; j++)
+        {
+            if(a[j]<b)
+            {
+                b=a[j];
+            }
+        }
+
+        printf("Smallest value in array is %d.",b);
+        return 0;
+    }
+
+
+6. Write a program to sort elements of an array of size 10. Take array values from the
+user.
+
+Ans. #include<stdio.h>
+
+    int main()
+    {
+        int a[10], b;
+
+        for(int i=0; i<10; i++)
+        {
+            scanf("%d",&a[i]);
+        }
+
+        for(int i=0; i<10; i++)
+        {
+            for(int j=i+1; j<10; j++)
+            {
+                if(a[j]<a[i])
+                {
+                    b=a[j];
+                    a[j]=a[i];
+                    a[i]=b;
+                }
+            }
+        }
+
+        for(int i=0; i<10; i++)
+        {
+            printf("%d ",a[i]);
+        }
+        return 0;
+    }
+
+
+7. Write a program to find second largest in an array.Take array values from the user.
+
+Ans. #include<stdio.h>
+
+    int main()
+    {
+        int a[5];
+        int b;
+
+        for(int i=0; i<5; i++)
+        {
+            scanf("%d",&a[i]);
+        }
+
+        for(int i=0; i<5;i++)
+        {
+            for(int j=0; j<5; j++)
+            {
+                if(a[j]>a[i])
+                {
+                    b=a[j];
+                    a[j]=a[i];
+                    a[i]=b;
+                }
+            }
+        }
+
+        printf("Second Largest number is %d",a[3]);
+        return 0;
+    }
+
+
+8. Write a program to find the second smallest number in an array.Take array values
+from the user.
+
+Ans. #include<stdio.h>
+
+    int main()
+    {
+        int a[5];
+        int b;
+
+        for(int i=0; i<5; i++)
+        {
+            scanf("%d",&a[i]);
+        }
+
+        for(int i=0; i<5;i++)
+        {
+            for(int j=0; j<5; j++)
+            {
+                if(a[j]>a[i])
+                {
+                    b=a[j];
+                    a[j]=a[i];
+                    a[i]=b;
+                }
+            }
+        }
+
+        printf("Second Smallest number is %d",a[1]);
+        return 0;
+    }
+
+
+
+9. Write a program in C to read n number of values in an array and display it in reverse
+order. Take array values from the user.
+
+Ans. #include<stdio.h>
+
+    int main()
+    {
+        int n,t;
+        printf("Enter length of an Array\n");
+        scanf("%d",&n);
+        int a[n];
+
+        printf("\nEnter values\n");
+        for(int i=0; i<n; i++)
+        {
+            scanf("%d",&a[i]);
+        }
+
+        int j,mid,k=0;
+        mid=n/2;
+
+        for(j=n-1; j>=mid; j--)
+        {
+            t=a[j];
+            a[j]=a[k];
+            a[k]=t;
+            k++;
+        }
+
+        printf("\n#####################\n");
+
+        for(int m=0; m<n; m++)
+        {
+            printf("%d ",a[m]);
+        }
+        return 0;
+    }
+
+
+
+10. Write a program in C to copy the elements of one array into another array.Take array
+values from the user.
+
+Ans. #include<stdio.h>
+
+    int main()
+    {
+        int n,t;
+        printf("Enter length of an Array\n");
+        scanf("%d",&n);
+        int a[n];
+        int b[n];
+
+        printf("\nEnter values\n");
+        for(int i=0; i<n; i++)
+        {
+            scanf("%d",&a[i]);
+        }
+
+
+        for(int j=0; j<n; j++)
+        {
+            b[j]=a[j];
+        }
+
+        printf("\n#####################\n");
+        printf("Array 1\n");
+        for(int m=0; m<n; m++)
+        {
+            printf("%d ",a[m]);
+        }
+
+        printf("\n#####################\n");
+        printf("Array 2\n");
+        for(int p=0; p<n; p++)
+        {
+            printf("%d ",b[p]);
+        }
+        return 0;
+    }
+
