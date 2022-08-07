@@ -1,0 +1,256 @@
+1. Write a program to calculate the length of the string. (without using built-in method)
+
+Ans.#include<stdio.h>
+
+    int main()
+    {
+        int i;
+        char s[50]="Ayush";
+        for(i=0; s[i]; i++);
+        printf("%d",i);
+        return 0;
+    }
+
+2. Write a program to count the occurrence of a given character in a given string.
+
+Ans.#include<stdio.h>
+
+    int main()
+    {
+        int count=0;
+        char a[30]="Roshini";
+
+        char b='o';
+
+        for(int i=0; a[i]; i++)
+        {
+            if(a[i]==b)
+                count++;
+        }
+
+        printf("%d",count);
+        return 0;
+    }
+
+
+
+3. Write a program to count vowels in a given string
+
+Ans.#include<stdio.h>
+
+    int main()
+    {
+        int count=0;
+        char s[10]="Mddy";
+
+        for(int i=0; s[i]; i++)
+        {
+            if(s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u' || s[i] == 'A' || s[i] == 'E' || s[i] == 'I' || s[i] == 'O' || s[i] == 'U')
+            {
+                count++;
+            }
+        }
+
+        printf("%d", count);
+        return 0;
+    }
+
+
+
+4. Write a program to convert a given string into uppercase
+
+Ans.#include<stdio.h>
+
+    int main()
+    {
+        char a[20] = "kaKa";
+
+        for(int i=0; a[i]; i++)
+        {
+            if(a[i]>='a' && a[i]<='z')
+            {
+                a[i]=a[i]-32;
+            }
+        }
+
+        printf("%s",a);
+        return 0;
+    }
+
+
+
+5. Write a program to convert a given string into lowercase
+
+Ans.#include<stdio.h>
+
+    int main()
+    {
+        char a[20] = "SINGeR";
+
+        for(int i=0; a[i]; i++)
+        {
+            if(a[i]>='A' && a[i]<='Z')
+            {
+                a[i]=a[i]+32;
+            }
+        }
+
+        printf("%s",a);
+        return 0;
+    }
+
+
+6. Write a program to reverse a string.
+
+Ans.#include<stdio.h>
+
+    int main()
+    {
+        int i;
+        char s[10] = "Ridihima";
+
+        for(i=0; s[i]; i++);
+
+        int j=0, p=1;
+
+        int len = i/2;
+
+        for(int k=i-1; p<=len; k--)
+        {
+            char t=s[k];
+            s[k]=s[j];
+            s[j]=t;
+            j++;
+            p++;
+        }
+
+        printf("%s",s);
+
+
+
+        return 0;
+    }
+
+
+7. Write a program in C to count the total number of alphabets, digits and special
+characters in a string.
+
+Ans.#include<stdio.h>
+
+    int main()
+    {
+        char a[20] = "S#IN456GeR@9Tsk y$";
+        int totalpha=0;
+        int totdigit=0;
+        int totspecial=0;
+
+        for(int i=0; a[i]; i++)
+        {
+            if((a[i]>='A' && a[i]<='Z') || (a[i]>='a' && a[i]<='z'))
+            {
+                totalpha++;
+            }
+            else if(a[i]>='0' && a[i]<='9')
+            {
+                totdigit++;
+            }
+            else
+            {
+                totspecial++;
+            }
+        }
+
+        printf("Total Alphabets in a string is %d\n",totalpha);
+        printf("Total Digits in a string is %d\n",totdigit);
+        printf("Total special characters in a string is %d",totspecial);
+        return 0;
+    }
+
+
+8. Write a program in C to copy one string to another string.
+
+Ans.#include<stdio.h>
+
+    int main()
+    {
+        char s[20]="Ayodya";
+        char a[10];
+        int i;
+
+        for(i=0; s[i]; i++)
+        {
+            a[i]=s[i];
+        }
+
+        a[i]='\0';
+
+        printf("%s\n",s);
+        printf("%s",a);
+        return 0;
+    }
+
+
+
+9. Write a C program to sort a string array in ascending order.
+
+Ans.#include<stdio.h>
+
+    int main()
+    {
+        char s[20]="StarPQMcefAk";
+
+        for(int i=0; s[i]; i++)
+        {
+            if(s[i]>='A' && s[i]<='Z')
+            {
+                s[i]=s[i]+32;
+            }
+        }
+
+        char t;
+
+        for(int j=0; s[j]; j++){
+            for(int k=j+1; s[k]; k++)
+            {
+                if(s[j] > s[k])
+                {
+                    t=s[j];
+                    s[j]=s[k];
+                    s[k]=t;
+                }
+            }
+        }
+
+        printf("%s", s);
+        return 0;
+    }
+
+
+10. Write a program in C to Find the Frequency of Characters.
+
+Ans.#include<stdio.h>
+
+    int main()
+    {
+        char s[100];
+        int freq[256]={0};
+        int i;
+
+        printf("Enter a String: \n");
+        scanf("%s",s);
+
+        for(i=0; s[i]; i++)
+        {
+            int j = s[i];
+            freq[j]++;
+        }
+
+        for(i=0; i<256; i++)
+        {
+            if(freq[i]!=0)
+            {
+                printf("%c - %d\n",i,freq[i]);
+            }
+        }
+        return 0;
+    }
