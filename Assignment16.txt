@@ -1,0 +1,439 @@
+1. Write a program to calculate the sum of two matrices each of order 3x3.
+
+Ans. #include<stdio.h>
+
+    int main()
+    {
+        int a[3][3], b[3][3], c[3][3], i, j;
+        printf("Enter 9 numbers for first matrix\n");
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                scanf("%d",&a[i][j]);
+            }
+        }
+
+        printf("\nEnter 9 numbers for first matrix\n");
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                scanf("%d",&b[i][j]);
+            }
+        }
+        printf("\nSum of Matrices\n");
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                c[i][j]=a[i][j]+b[i][j];
+                printf("%d ",c[i][j]);
+            }
+            printf("\n");
+        }
+
+        return 0;
+    }
+
+
+
+2. Write a program to calculate the product of two matrices each of order 3x3.
+
+Ans.#include<stdio.h>
+
+    int main()
+    {
+        int a[3][3],b[3][3], c[3][3], i, j;
+        printf("Enter 9 numbers in first matrix\n");
+        for(i=0; i<3; i++)
+        {
+            for(j=0; j<3; j++)
+            {
+                scanf("%d",&a[i][j]);
+            }
+        }
+        printf("\nEnter 9 numbers in second Matrix\n");
+        for(i=0; i<3; i++)
+        {
+            for(j=0; j<3; j++)
+            {
+                scanf("%d",&b[i][j]);
+            }
+        }
+        printf("Product is \n");
+        for(i=0; i<3; i++)
+        {
+            for(j=0; j<3; j++)
+            {
+                c[i][j]=a[i][j]*b[i][j];
+                printf("%d ",c[i][j]);
+            }
+            printf("\n");
+        }
+        return 0;
+    }
+
+3. Write a program in C to find the transpose of a given matrix.
+
+
+Ans.#include<stdio.h>
+
+    int main()
+    {
+        int a[3][3], b[3][3], i, j, k, l=0;
+        printf("Enter 9 numbers of first matrix\n");
+        for(i=0; i<3; i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                scanf("%d",&a[i][j]);
+            }
+        }
+
+        printf("\n\n");
+
+        for(i=0;i<3;i++)
+        {
+            k=0;
+            for(j=0;j<3;j++)
+            {
+                b[i][j]=a[k][l];
+                k++;
+            }
+            l++;
+        }
+
+        printf("\n\nTransponse Matrix is\n\n");
+
+        for(i=0;i<3; i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                printf("%d ",b[i][j]);
+            }
+            printf("\n");
+        }
+
+
+        return 0;
+    }
+
+
+
+4. Write a program in C to find the sum of right diagonals of a matrix.
+
+
+Ans.#include<stdio.h>
+
+    int main()
+    {
+        int a[3][3],sum=0, i, j;
+
+        printf("Enter 9 numbers in first matrix\n");
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                scanf("%d",&a[i][j]);
+            }
+        }
+
+        printf("\n\n");
+
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                if(i==j)
+                    sum=sum+a[i][j];
+            }
+        }
+        printf("Sum is %d",sum);
+        return 0;
+    }
+
+
+5. Write a program in C to find the sum of left diagonals of a matrix.
+
+
+Ans.#include<stdio.h>
+
+    int main()
+    {
+        int a[3][3],sum=0, i, j, k=2;
+
+        printf("Enter 9 numbers in first matrix\n");
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                scanf("%d",&a[i][j]);
+            }
+        }
+
+        printf("\n\n");
+
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                if(j==k)
+                {
+                    sum=sum+a[i][k];
+                    k--;
+                }
+
+            }
+        }
+        printf("Sum is %d",sum);
+        return 0;
+    }
+
+
+
+6. Write a program in C to find the sum of rows and columns of a Matrix.
+
+
+Ans.#include<stdio.h>
+
+    int main()
+    {
+        int a[3][3],sumRow=0, sumCol1=0,sumCol2=0, sumCol3=0,  i, j, k=0, l=0;
+
+        printf("Enter 9 numbers in first matrix\n");
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                scanf("%d",&a[i][j]);
+            }
+        }
+
+        printf("\n\n");
+
+        for(i=0;i<3;i++)
+        {
+            sumRow=0;
+            for(j=0;j<3;j++)
+            {
+                    if(i==k)
+                    {
+                        sumRow=sumRow+a[i][j];
+                    }
+            }
+            printf("\nSum of Row is %d\n",sumRow);
+            k++;
+        }
+
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                    if(j==0)
+                    {
+                        sumCol1=sumCol1+a[i][j];
+                    }
+
+                    if(j==1)
+                    {
+                        sumCol2=sumCol2+a[i][j];
+                    }
+
+                    if(j==2)
+                    {
+                        sumCol3=sumCol3+a[i][j];
+                    }
+            }
+
+        }
+        printf("\nSum of Col1 is %d\n",sumCol1);
+        printf("\nSum of Col2 is %d\n",sumCol2);
+        printf("\nSum of Col3 is %d\n",sumCol3);
+
+        return 0;
+    }
+
+
+7. Write a program in C to print or display the lower triangular of a given matrix.
+
+
+Ans.#include<stdio.h>
+
+    int main()
+    {
+        int a[3][3],sum=0, i, j, m=3, n=3;
+
+        printf("Enter 9 numbers in first matrix\n");
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                scanf("%d",&a[i][j]);
+            }
+        }
+
+        printf("\n\n");
+
+        if(m==n)
+        {
+            for(i=0;i<m;i++)
+            {
+                for(j=0;j<n;j++)
+                {
+                    if(i>j)
+                    {
+                        printf("%d ",a[i][j]);
+                    }
+                }
+            }
+        }
+        return 0;
+    }
+
+
+8. Write a program in C to print or display an upper triangular matrix.
+
+
+Ans.#include<stdio.h>
+
+    int main()
+    {
+        int a[3][3],sum=0, i, j, m=3, n=3;
+
+        printf("Enter 9 numbers in first matrix\n");
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                scanf("%d",&a[i][j]);
+            }
+        }
+
+        printf("\n\n");
+
+        if(m==n)
+        {
+            for(i=0;i<m;i++)
+            {
+                for(j=0;j<n;j++)
+                {
+                    if(i<j)
+                    {
+                        printf("%d ",a[i][j]);
+                    }
+                }
+            }
+        }
+        return 0;
+    }
+
+
+9. Write a program in C to accept a matrix and determine whether it is a sparse matrix.
+
+
+Ans.#include<stdio.h>
+
+    int main()
+    {
+        int a[3][3], i, j, count=0;
+
+        printf("Enter 9 numbers in matrix\n");
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                scanf("%d",&a[i][j]);
+            }
+        }
+
+        printf("\n\n");
+
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                if(a[i][j]==0)
+                {
+                    count++;
+                }
+            }
+        }
+
+        if(count>((3*3)/2))
+        {
+            printf("It is sparse matrix");
+        }
+        else
+        {
+            printf("It is not a sparse matrix");
+        }
+        return 0;
+    }
+
+
+10. Write a program in C to find the row with maximum number of 1s.
+
+
+Ans.#include<stdio.h>
+
+    int main()
+    {
+        int a[3][3], i, j, cr1=0,cr2=0,cr3=0;
+
+        printf("Enter 9 number for matrix\n");
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                scanf("%d",&a[i][j]);
+            }
+        }
+
+        printf("\n\n");
+
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                if(i==0 && a[i][j]==1)
+                {
+                    cr1++;
+                }
+
+                if(i==1 && a[i][j]==1)
+                {
+                    cr2++;
+                }
+
+                if(i==2 && a[i][j]==1)
+                {
+                    cr3++;
+                }
+            }
+        }
+
+        if(cr1>cr2)
+        {
+            if(cr1>cr3)
+            {
+                printf("%d and row is 1", cr1);
+            }
+            else
+            {
+                printf("%d and row is 3", cr3);
+            }
+        }
+        else
+        {
+            if(cr2>cr3)
+            {
+                printf("%d and row is 2", cr2);
+            }
+            else
+            {
+                printf("%d and row is 3", cr3);
+            }
+        }
+        return 0;
+    }
