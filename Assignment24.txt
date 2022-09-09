@@ -1,0 +1,367 @@
+1. Define a function to check whether a given number is a Prime number or not.
+
+Ans.#include<iostream>
+    using namespace std;
+
+    int checkPrime(int);
+
+    int main()
+    {
+        int a;
+        cout<<"Enter a number"<<endl;
+        cin>>a;
+        if(checkPrime(a))
+        {
+            cout<<"The number "<<a<<" is prime number."<<endl;
+        }
+        else
+        {
+            cout<<"The number "<<a<<" is not a prime number."<<endl;
+        }
+        return 0;
+    }
+
+
+    int checkPrime(int n)
+    {
+        int i;
+        for(i=2; i<=n/2; i++)
+        {
+            if(n%i==0)
+            {
+                return 0;
+            }
+        }
+        return 1;
+    }
+
+
+2. Define a function to find the highest value digit in a given number.
+
+Ans. #include<iostream>
+      using namespace std;
+
+      int highestDigit(int);
+
+      int main()
+      {
+          int a;
+          cout<<"Enter a number"<<endl;
+          cin>>a;
+          int res;
+          res=highestDigit(a);
+          cout<<endl<<"Highest digit in number "<<a<<" is "<<res;
+          return 0;
+      }
+
+
+      int highestDigit(int n)
+      {
+          int hd=n%10;
+          while(n)
+          {
+              int digit=n%10;
+              if(digit>hd)
+              {
+                  hd=digit;
+              }
+              n=n/10;
+          }
+          return hd;
+      }
+
+
+3. Define a function to calculate x raised to the power y.
+
+Ans. #include<iostream>
+    using namespace std;
+
+    int calPower(int, int);
+
+    int main()
+    {
+        int a,b;
+        cout<<"Enter two numbers"<<endl;
+        cin>>a>>b;
+        int res;
+        res=calPower(a,b);
+        cout<<endl<<a<<" raised to power "<<b<<" is "<<res;
+        return 0;
+    }
+
+
+    int calPower(int n, int p)
+    {
+        int i,res=1;
+        if(p==0)
+        {
+            return 1;
+        }
+        for(i=0; i<p; i++)
+        {
+            res = res*n;
+        }
+        return res;
+    }
+
+
+
+4. Define a function to print Pascal Triangle up to N lines.
+
+Ans. #include<iostream>
+    using namespace std;
+
+    int fact(int);
+    int comb(int,int);
+    void printPascal(int);
+
+    int main()
+    {
+        printPascal(6);
+        return 0;
+    }
+
+    void printPascal(int n)
+    {
+        int flag=1,k;
+        for(int i=0; i<n; i++)
+        {
+            flag=1;
+            k=0;
+            for(int j=0; j<(2*n-1); j++)
+            {
+                if(j>=(n-1-i) && j<=(n-1+i))
+                {
+                    if(flag==1)
+                    {
+                        cout<<comb(i, k);
+                        flag=0;
+                        k++;
+                    }
+                    else
+                    {
+                        cout<<" ";
+                        flag=1;
+                    }
+                }
+                else
+                {
+                    cout<<" ";
+                }
+            }
+            cout<<endl;
+        }
+    }
+
+    int fact(int n)
+    {
+        int fact=1;
+        int i;
+        for(i=2;i<=n;i++)
+        {
+            fact=fact * i;
+        }
+        return fact;
+    }
+
+    int comb(int n, int r)
+    {
+        return (fact(n))/((fact(r))*fact(n-r));
+    }
+
+
+5. Define a function to check whether a given number is a term in a Fibonacci series or
+not.
+
+Ans. #include<iostream>
+    using namespace std;
+
+    int fibCheck(int);
+
+    int main()
+    {
+        int a=5;
+        if(fibCheck(a))
+        {
+            cout<<"Yes the term "<<a<<" is in fib series.";
+        }
+        else
+        {
+            cout<<"No, the term "<<a<<" is not in fib series.";
+        }
+        return 0;
+    }
+
+    int fibCheck(int n)
+    {
+        int a = -1,b = 1;
+        int i,final;
+        for(i=0; i<2*n; i++)
+        {
+            final=a+b;
+            if(final == n)
+            {
+                return 1;
+            }
+            a = b;
+            b = final;
+        }
+        return 0;
+    }
+
+6. Define a function to swap data of two int variables using call by reference
+
+Ans. #include<iostream>
+    using namespace std;
+
+    void swapbyRef(int &, int &);
+
+    int main()
+    {
+        int a,b;
+        cout<<"Enter two numbers"<<endl;
+        cin>>a>>b;
+        swapbyRef(a,b);
+        cout<<endl<<"a: "<<a<<" and b: "<<b<<" after swapping";
+        return 0;
+    }
+
+
+    void swapbyRef(int &n, int &p)
+    {
+        int t;
+        t=n;
+        n=p;
+        p=t;
+    }
+
+
+7. Write a function using the default argument that is able to add 2 or 3 numbers.
+
+Ans. #include<iostream>
+    using namespace std;
+
+    inline int add(int , int=0, int=0);
+
+    int main()
+    {
+        int a,b;
+        cout<<"Enter two numbers"<<endl;
+        cin>>a>>b;
+        cout<<endl<<"Addition of two Numbers "<<a<<" and "<<b<<" is "<<add(a,b)<<endl;
+
+        int x,y,z;
+        cout<<"Enter three numbers"<<endl;
+        cin>>x>>y>>z;
+        cout<<endl<<"Addition of three Numbers "<<x<<","<<y<<" and "<<z<<" is "<<add(x,y,z);
+        return 0;
+    }
+
+
+    int add(int n, int p, int r)
+    {
+        return n+p+r;
+    }
+
+
+8. Define overloaded functions to calculate area of circle, area of rectangle and area of
+triangle
+
+Ans. #include<iostream>
+    using namespace std;
+
+    inline float area(int);
+    inline int area(int,int);
+    inline float area(float,int);
+
+
+    int main()
+    {
+        cout<<"Area of circle with radius 5 is "<<area(5);
+        cout<<endl<<"Area of Rectangle with length 5 and breadth 8 is "<<area(5,8);
+        cout<<endl<<"Area of Triangle with base 20 and height 30 is "<<area(20.0f,30);
+        return 0;
+    }
+
+    float area(int r)
+    {
+        return 3.14*r*r;
+    }
+
+    int area(int a,int b)
+    {
+        return a*b;
+    }
+
+    float area(float k,int l)
+    {
+        return (k*l)/2;
+    }
+
+
+9. Write functions using function overloading to find a maximum of two numbers and
+both the numbers can be integer or real.
+
+Ans. #include<iostream>
+    using namespace std;
+
+    inline int findMax(int, int);
+    inline float findMax(int, float);
+    inline float findMax(float, float);
+
+    int main()
+    {
+        cout<<"case of int and int "<<findMax(6,'c')<<endl;
+        cout<<"case of float and float "<<findMax(101.00f,301.0f)<<endl;
+        cout<<"case of int and float "<<findMax('p',30.0f)<<endl;
+        return 0;
+    }
+
+    float findMax(int a, float b)
+    {
+        return a>b?a:b;
+    }
+
+    int findMax(int a, int b)
+    {
+        return a>b?a:b;
+    }
+
+    float findMax(float a, float b)
+    {
+        return a>b?a:b;
+    }
+
+
+10. Write functions using function overloading to add two numbers having different data
+types.
+
+Ans. #include<iostream>
+    using namespace std;
+
+    inline int add(int, int);
+    inline float add(int, float);
+    inline float add(float, float);
+
+    int main()
+    {
+        cout<<"Adding Two Integers Values "<<add(8,9)<<endl;
+        cout<<"Adding Two Float Values "<<add(8.00f,9.23f)<<endl;
+        cout<<"Adding One Float and One Int Values "<<add('a',9.0f)<<endl;
+        return 0;
+    }
+
+    int add(int a, int b)
+    {
+        return a+b;
+    }
+
+    float add(int a, float b)
+    {
+        return a+b;
+    }
+
+    float add(float a, float b)
+    {
+        return a+b;
+    }
